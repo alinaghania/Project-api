@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page de chat</title>
+  <!-- Ajoutez les balises <link> ou <style> pour le style CSS de votre page -->
+</head>
+<body>
+  <!-- Contenu de votre page de chat -->
+  <h1>Bienvenue dans le chat !</h1>
+  <p>Ici, vous pouvez discuter avec d'autres utilisateurs.</p>
+
+  <!-- Ajoutez d'autres éléments HTML nécessaires pour votre page de chat -->
+
+  <!-- Ajoutez les balises <script> pour vos scripts JavaScript si nécessaire -->
+  <script src="https://cdn.socket.io/3.1.3/socket.io.js"></script>
+  <script>
+    // Gérer les événements du chat ici
+    const socket = io(); // Connexion au serveur Socket.io
+
+    // Exemple d'événement de message reçu
+    socket.on('message', (data) => {
+      console.log('Message received:', data);
+      // Faites quelque chose avec le message reçu (par exemple, affichez-le dans l'interface utilisateur)
+    });
+
+    // Exemple d'événement d'envoi de message
+    function sendMessage(message) {
+      socket.emit('message', message);
+    }
+  </script>
+</body>
+</html>
